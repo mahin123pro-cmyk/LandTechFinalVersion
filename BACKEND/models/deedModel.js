@@ -15,9 +15,6 @@ const ownershipHistorySchema=new mongoose.Schema({
     },toDate:{
         type:Date,
         default:null
-    },transferReason:{
-        type:String,
-       default:null
     },transferDocumentNo:{
         type:String,
         required:true
