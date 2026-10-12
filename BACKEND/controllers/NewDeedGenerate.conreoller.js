@@ -8,7 +8,7 @@
 
 import crypto from "crypto"
 import { generateHash } from "../utils/generateHash.js"
-import { deedModel } from "../models/deedModel"
+import { deedModel } from "../models/deedModel.js"
 
 export const newdeedGenerate = async (req, res) => {
 
@@ -109,8 +109,11 @@ export const newdeedGenerate = async (req, res) => {
 
 
 
-        const deed=await deedModel.findById(data.deedId)
-        res.status(200).json({message:deed})
+        const deed=await deedModel.findOne({deedId:data.deedId})
+        res.status(200).json({message:deed,
+            message2:"Submit SuccessFully!!!"
+
+        })
 
 
     } catch (error) {

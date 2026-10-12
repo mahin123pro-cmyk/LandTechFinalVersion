@@ -4,7 +4,7 @@ dotenv.config();
 import { app } from "./app.js";
 import mongoose from "mongoose";
 
-const PORT = process.env.PORT || 5000;
+
 
 const connectDB=async()=>{
     try{
@@ -19,7 +19,7 @@ const connectDB=async()=>{
 }
 
 
-app.listen(PORT,async()=>{
+app.listen(3000,"0.0.0.0",async()=>{
     await connectDB()
     console.log("Surver is running successfully")
 })
