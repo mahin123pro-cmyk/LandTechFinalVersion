@@ -6,11 +6,10 @@ const app=express();
 
 
 app.use(cors({
-origin: "https://vumi-three.vercel.app",
-methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-allowedHeaders: ["Content-Type", "Authorization"],
-credentials: true
+    origin: "https://vumi-three.vercel.app",
+    credentials: true
 }));
+
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
