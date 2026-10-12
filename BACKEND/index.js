@@ -18,8 +18,8 @@ const connectDB=async()=>{
     }
 }
 
-
-app.listen(3000,"0.0.0.0",async()=>{
+let PORT=process.env.PORT ||5000
+app.listen(PORT,"0.0.0.0",async()=>{
     await connectDB()
     console.log("Surver is running successfully")
 })
