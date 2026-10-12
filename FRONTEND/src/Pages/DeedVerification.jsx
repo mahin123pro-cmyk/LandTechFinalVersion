@@ -23,11 +23,15 @@ const [resDetails,setResDetails]=useState([])
 
             const res = await api.post("/api/deed/verification", deeds);
 
-           
-            setDeeds({deedId:"", ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })
+          if(res.status===200){
+console.log(res.data)
+          } 
+         if(res.status===201){
+             setDeeds({deedId:"", ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })
            setResDetails(res?.data?.message)
            setVerifiedData(res.data?.messageVerified)
             toast.success(res?.data?.message)
+         }
         }catch (error) {
             console.log(error.message)
           
@@ -54,7 +58,7 @@ const [resDetails,setResDetails]=useState([])
           
           <h1 className='text-3xl mt-10 text-amber-700 mb-5 md:text-5xl font-semibold  md:font-bold mx-auto text-center'>
             Deed Verification
-            <span>LV-D-0130207DFAFBDF3A </span>
+            
           </h1>
       
       <div className='flex flex-col md:flex-row gap-5 w-full mb-10 '>

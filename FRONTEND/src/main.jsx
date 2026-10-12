@@ -7,6 +7,7 @@ import DeedGeneratePage from './Pages/DeedGeneratePage.jsx'
 import DeedTransfer from './Pages/DeedTransfer.jsx'
   import { ToastContainer, toast } from 'react-toastify';
 import DeedVerification from './Pages/DeedVerification.jsx'
+import AllId from './Pages/AllId.jsx'
 
 
 const router=createBrowserRouter([
@@ -14,7 +15,9 @@ const router=createBrowserRouter([
 
   {path:"/deedgenerate",element:<DeedGeneratePage/>},
   {path:"/transfer",element:<DeedTransfer/>},
-  {path:"/verification",element:<DeedVerification/>}
+  {path:"/verification",element:<DeedVerification/>},
+  {path:"/verification/:id",element:<DeedVerification/>},
+  {path:"/allid",element:<AllId/>}
 ])
 
 

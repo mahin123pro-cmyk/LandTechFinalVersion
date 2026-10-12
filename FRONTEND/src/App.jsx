@@ -1,4 +1,4 @@
-import { BadgeCheck, Clock4, DatabaseCheck, Eye, FileCheck, FileText, Hash, Lock, QrCode, Search, TriangleAlert } from 'lucide-react'
+import { BadgeCheck, Clock4, DatabaseCheck, Eye, FileCheck, FileText, Hash, Lock, PanelRightOpen, QrCode, Search, TriangleAlert } from 'lucide-react'
 import React, { useState } from 'react'
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -42,22 +42,26 @@ function App() {
 
     navigate(`/verification/${search}`)
   }
+  const [show,setShow]=useState(false)
+  const handleshow=()=>{
+setShow(!show)
+  }
   return (
     <div className=''>
-      <nav className='flex justify-around items-center px-10 fixed left-0 right-0 bg-white z-10 md:p-4'>
+      <nav className='flex justify-between px-4 md:justify-around items-center md:px-10 fixed left-0 right-0 bg-white z-10 md:p-4'>
 
         <div className=' flex  items-center gap-x-7'>
 
-          <div className=' flex items-center'><img src={logos} className='w-14' /><span className='font-bold text-blue-950 text-4xl'>VUMI</span></div>
+          <div className=' flex items-center'><img src={logos} className='w-14' /><span className='font-bold text-xl text-blue-950 md:text-4xl'>VUMI</span></div>
 
-          <div>
+          <div className='hidden md:block'>
             <ul className='flex flex-row text-gray-500 cursor-pointer text-xl gap-x-4'>
-              <p >How it works
-              </p>
-              <p>Features
-              </p>
-              <p>Security</p>
-              <p>Impact</p>
+              <a href='#howitwork'>How it works
+              </a>
+              <a href='#features'>Features
+              </a>
+              <a href='#security'>Security</a>
+              
             </ul>
           </div>
         </div>
@@ -65,21 +69,42 @@ function App() {
 
 
 
-        <div className='flex items-center  gap-x-5'>
+        <div className='hidden md:flex items-center  gap-x-5 '>
           
-            <ul className='flex text-2xl font-semibold gap-x-4 text-blue-950'>
-              <Link to="/transfer">Transfer Deed</Link>
+            <ul className='flex text-lg text-nowrap md:text-2xl font-semibold gap-x-4 text-blue-950'>
+              <Link to="/transfer" className=''>Transfer Deed</Link>
               <Link to="/deedgenerate">Deed Generate</Link>
               
             </ul>
           
-          <button className='bg-green-700 cursor-pointer flex rounded items-center px-2 py-1 text-sm md:p-3' onClick={verificationNavigate}><FileText size={15} className='text-white text-sm' /> <span className='text-white'>Verify a Document</span></button>
+          <button className='hidden bg-green-700 cursor-pointer md:flex rounded items-center px-2 py-1 text-sm md:p-3' onClick={verificationNavigate}><FileText size={15} className='text-white text-sm' /> <span className='text-white'>Verify a Document</span></button>
 
+        </div>
+        <div className='md:hidden'>
+          <PanelRightOpen onClick={handleshow} />
         </div>
       </nav>
 
+<div
+  className={`md:hidden fixed inset-0 z-50 flex h-full w-full flex-col items-center justify-center gap-5 bg-amber-300 text-amber-100 transition-transform duration-300 ${
+    show ? "translate-x-0" : "-translate-x-full"
+  }`}
+>
+  <button
+    onClick={handleshow}
+    className="absolute right-5 top-5 text-black"
+  >
+    Close ✕
+  </button>
 
+  <Link to="/transfer" onClick={() => setShow(false)}>
+    Transfer Deed
+  </Link>
 
+  <Link to="/deedgenerate" onClick={() => setShow(false)}>
+    Deed Generate
+  </Link>
+</div>
       {/* <Link to="/deedmaker" className='inline cursor-pointer'>Deed Maker</Link> */}
 
 
@@ -114,9 +139,9 @@ function App() {
         </div>
 
       </div>
-      <div className='bg-gray-50 px-5 w-full  md:px-20 pt-6'>
-        <div className='pt-5 md:pt-14'>
-          <h1 className='text-black md:font-semibold text-4xl'>How verification works</h1>
+      <div className='bg-gray-50 px-5 w-full  md:px-20 pt-6  scroll-mt-20' id='howitwork'>
+        <div className='pt-5 md:pt-14 ' >
+          <h1 className='text-black md:font-semibold text-4xl' >How verification works</h1>
           <p className='text-zinc-600 text-lg md:text-xl max-w-3xl pt-4'>No account needed for a quick check. Upload a deed or scan its QR code and get a result you can rely on.</p>
         </div>
         <div className='flex flex-col md:flex-row justify-between gap-5 pt-10'>
@@ -135,8 +160,8 @@ function App() {
       </div>
 
 
-      <div className='bg-gray-50 px-5 w-full md:px-20 pt-20 pb-6'>
-        <div className='pt-5  md:pt-14'>
+      <div className='bg-gray-50 px-5 w-full md:px-20 pt-20 pb-6 ' >
+        <div className='pt-5  md:pt-14 scroll-mt-20' id="features">
           <h1 className='text-black md:font-semibold text-4xl'>Everything you need to confirm a property is what it claims to be</h1>
 
 
@@ -157,8 +182,8 @@ function App() {
       </div>
 
 
-      <div className='bg-blue-950 text-white p-5'>
-        <div className='mt-10 md:m-20'>
+      <div className='bg-blue-950 text-white p-5' id='security'>
+        <div className='mt-10 md:m-20 scroll-mt-20'>
           <h1 className='text-4xl md:font-semibold mb-3'>Built so records can't be quietly changed</h1>
           <p className='text-xl text-gray-300 mb-6 '>Every verification is based on the registry's own data and protected from the moment you upload.</p>
         </div>
@@ -174,14 +199,14 @@ function App() {
       </div>
 
 
-      <div className=' flex flex-row justify-around px-20 py-10' >
-        <div className= ' w-1/5'>
+      <div className=' flex flex-col px-5 md:flex-row justify-around md:px-20 py-10' >
+        <div className= 'w-full md:w-1/5'>
           <div className=' flex items-center'><img src={logos} className='w-14' /><span className='font-bold text-blue-950 text-4xl'>VUMI</span></div>
           <p>Deed and ownership verification for buyers, owners, legal professionals, and land offices.</p>
 
 
         </div>
-        <div className=' w-1/5 '>
+        <div className='w-full md:w-1/5 '>
           <h1 className='font-semibold text-xl mb-3'>Platform</h1>
           <div className='text-gray-400'>
             <p>Verify a Document</p>
@@ -190,7 +215,7 @@ function App() {
           </div>
         </div>
 
-        <div className=' w-1/5'>
+        <div className=' w-full md:w-1/5 '>
           <h1 className='font-semibold text-xl mb-3'>For professionals</h1>
           <div className='text-gray-400'>
             <p>Legal Teams </p>
@@ -200,7 +225,7 @@ function App() {
 
           </div>
         </div>
-        <div className='w-1/5'>
+        <div className='w-full md:w-1/5 '>
           <h1 className='font-semibold text-xl mb-3'>Support</h1>
           <div className='text-gray-400'>
             <p>Help Center</p>
