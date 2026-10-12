@@ -8,6 +8,7 @@ function DeedVerification() {
 
     const navigate = useNavigate()
     const [sucess,setSuccess]=useState("")
+    const[verifiedData,setVerifiedData]=useState({})
     const [deeds, setDeeds] = useState({deedId:"",ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" });
 const [resDetails,setResDetails]=useState([])
     const handleChange = (e) => {
@@ -25,7 +26,7 @@ const [resDetails,setResDetails]=useState([])
            
             setDeeds({deedId:"", ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })
            setResDetails(res?.data?.message)
-           console.log(resDetails)
+           setVerifiedData(res.data?.messageVerified)
             toast.success(res?.data?.message)
         }catch (error) {
             console.log(error.message)
@@ -373,26 +374,26 @@ Registration Date :
 
 
   {
-    resDetails && resDetails.length>0 && <div className='bg-zinc-950 text-amber-50  px-4 md:px-20 py-8'>
-<div>
+    resDetails && resDetails.length>0 && <div className='bg-zinc-950  text-amber-50 w-full  px-4 md:px-20 py-8'>
+<div className='w-full'>
   
     <div>
       <h1 className='text-3xl font-semibold text-white '>Verification Result</h1>
       <p className='text-gray-400'>Submitted document compared with the registered record.</p>
-      <div className=' rounded-2xl flex'>
-       <p className='text-green-500 bg-green-600/25 flex px-2 py-1 rounded-2xl items-center font-sw'><Check className=' size-5 '   /><span>2  verified</span></p>
+      <div className=' rounded-2xl flex gap-x-5'>
+       <p className='text-green-500 border-green-400 border-2 bg-green-600/25 flex px-2 py-1 rounded-2xl items-center font-sw'><Check className=' size-5 '   /><span>{(verifiedData.verified)}  verified</span></p>
       
-       <p className='text-red-500 bg-red-600/25 flex px-2 py-1 rounded-2xl items-center'><X className=' size-5 '   /><span>2  verified</span></p>
+       <p className='text-red-500 border-red-400 border-2 bg-red-600/25 flex px-2 py-1 rounded-2xl items-center'><X className=' size-5 '   /><span>{String(verifiedData.unverified)}  Unverified</span></p>
       
       
       </div>
     </div>
-    <div>
+    <div className='w-full bg-blue-800/20 px-2 py-5 rounded-2xl my-5 border-green-400 border-2'>
 
-     <p>Document Hash</p>
-     <p>4a20b4e5264fef2ceabed51dfe47749cc58f91444ce29b85e93e7853c03ac6b1</p>
+     <p className='text-xl '>Document Hash</p>
+     <p className='text-green-400 overflow-auto  '>4a20b4e5264fef2ceabed51dfe47749cc58f91444ce29b85e93e7853c03ac6b1</p>
     </div>
-    <div>
+    <div className='flex flex-col gap-6'>
       <div>
          {resDetails[0]?.success ?<div className='flex justify-between bg-blue-500/30 p-5 border-l-4 rounded-2xl border-l-green-400'>
       <div>
@@ -400,8 +401,10 @@ Registration Date :
         <p className='text-2xl font-medium'>{resDetails[0]?.originalOwnerName}</p>
       </div>
   
-          <p className='text-green-400 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>2  verified</span></p>
+       <div>
+   <p className='text-green-400 border-green-400 border-2 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>verified</span></p>
      
+        </div>
     
     </div>: <div className='flex justify-between bg-red-400/30 p-5 border-l-4 rounded-2xl border-l-red-500'>
       <div>
@@ -415,24 +418,31 @@ Registration Date :
           {resDetails[0]?.fakeOwnerName} <span className='text-sm text-gray-400'>submitted</span>
         </p>
       </div>
-      <p className='text-red-600 font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl items-center'>
-        <X  className=' size-5 ' /><span>Not verified</span>
+    <div>
+  <p className='text-red-600 flex-row items-start flex-nowrap border-red-400 border-2  font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl md:items-center'>
+        <X  className=' size-5 ' /><span className='text-nowrap'>Not verified</span>
       </p>
+
+
+      </div>
     </div> }   
 
    
       </div>
 
 
-        <div>
+
+ <div>
          {resDetails[1]?.success ?<div className='flex justify-between bg-blue-500/30 p-5 border-l-4 rounded-2xl border-l-green-400'>
       <div>
         <p className='text-sm text-gray-400'>NID</p>
         <p className='text-2xl font-medium'>{resDetails[1]?.originalOwnerNid}</p>
       </div>
   
-          <p className='text-green-400 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>2  verified</span></p>
+       <div>
+   <p className='text-green-400 border-green-400 border-2 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>verified</span></p>
      
+        </div>
     
     </div>: <div className='flex justify-between bg-red-400/30 p-5 border-l-4 rounded-2xl border-l-red-500'>
       <div>
@@ -446,14 +456,334 @@ Registration Date :
           {resDetails[1]?.fakeOwnerNid} <span className='text-sm text-gray-400'>submitted</span>
         </p>
       </div>
-      <p className='text-red-600 font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl items-center'>
-        <X  className=' size-5 ' /><span>Not verified</span>
+    <div>
+  <p className='text-red-600 border-red-400 border-2 flex-row items-start flex-nowrap  font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl md:items-center'>
+        <X  className=' size-5 ' /><span className='text-nowrap'>Not verified</span>
       </p>
+
+
+      </div>
     </div> }   
 
    
       </div>
 
+
+
+
+
+       <div>
+         {resDetails[2]?.success ?<div className='flex justify-between bg-blue-500/30 p-5 border-l-4 rounded-2xl border-l-green-400'>
+      <div>
+        <p className='text-sm text-gray-400'>District</p>
+        <p className='text-2xl font-medium'>{resDetails[2]?.originalDistrict}</p>
+      </div>
+  
+       <div>
+   <p className='border-green-400 border-2 text-green-400 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>verified</span></p>
+     
+        </div>
+    
+    </div>: <div className='flex justify-between bg-red-400/30 p-5 border-l-4 rounded-2xl border-l-red-500'>
+      <div>
+        <p className='text-sm text-gray-400'>
+          District
+        </p>
+        <p className='text-2xl font-medium'>
+         {resDetails[2]?.originalDistrict}  <span className='text-sm text-gray-400'>registered</span>
+        </p>
+        <p className='text-2xl font-medium'>
+          {resDetails[2]?.fakeDistrict} <span className='text-sm text-gray-400'>submitted</span>
+        </p>
+      </div>
+    <div>
+  <p className='border-red-400 border-2 text-red-600 flex-row items-start flex-nowrap  font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl md:items-center'>
+        <X  className=' size-5 ' /><span className='text-nowrap'>Not verified</span>
+      </p>
+
+
+      </div>
+    </div> }   
+
+   
+      </div>
+
+
+
+
+
+       <div>
+         {resDetails[3]?.success ?<div className='flex justify-between bg-blue-500/30 p-5 border-l-4 rounded-2xl border-l-green-400'>
+      <div>
+        <p className='text-sm text-gray-400'>Upazila</p>
+        <p className='text-2xl font-medium'>{resDetails[3]?.originalUpazila}</p>
+      </div>
+  
+       <div>
+   <p className= 'border-green-400 border-2 text-green-400 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>verified</span></p>
+     
+        </div>
+    
+    </div>: <div className='flex justify-between bg-red-400/30 p-5 border-l-4 rounded-2xl border-l-red-500'>
+      <div>
+        <p className='text-sm text-gray-400'>
+          Upazila
+        </p>
+        <p className='text-2xl font-medium'>
+         {resDetails[3]?.originalUpazila}  <span className='text-sm text-gray-400'>registered</span>
+        </p>
+        <p className='text-2xl font-medium'>
+          {resDetails[3]?.fakeUpazila} <span className='text-sm text-gray-400'>submitted</span>
+        </p>
+      </div>
+    <div>
+  <p className='text-red-600 border-red-400 border-2 flex-row items-start flex-nowrap  font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl md:items-center'>
+        <X  className=' size-5 ' /><span className='text-nowrap'>Not verified</span>
+      </p>
+
+
+      </div>
+    </div> }   
+
+   
+      </div>
+
+
+
+       <div>
+         {resDetails[4]?.success ?<div className='flex justify-between bg-blue-500/30 p-5 border-l-4 rounded-2xl border-l-green-400'>
+      <div>
+        <p className='text-sm text-gray-400'>Khatian No</p>
+        <p className='text-2xl font-medium'>{resDetails[4]?.originalkhatianNo}</p>
+      </div>
+  
+       <div>
+   <p className=' border-green-400 border-2 text-green-400 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>verified</span></p>
+     
+        </div>
+    
+    </div>: <div className='flex justify-between bg-red-400/30 p-5 border-l-4 rounded-2xl border-l-red-500'>
+      <div>
+        <p className='text-sm text-gray-400'>
+          Khatian No
+        </p>
+        <p className='text-2xl font-medium'>
+         {resDetails[4]?.originalkhatianNo}  <span className='text-sm text-gray-400'>registered</span>
+        </p>
+        <p className='text-2xl font-medium'>
+          {resDetails[4]?.fakekhatianNo} <span className='text-sm text-gray-400'>submitted</span>
+        </p>
+      </div>
+    <div>
+  <p className='border-red-400 border-2 text-red-600 flex-row items-start flex-nowrap  font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl md:items-center'>
+        <X  className=' size-5 ' /><span className='text-nowrap'>Not verified</span>
+      </p>
+
+
+      </div>
+    </div> }   
+
+   
+      </div>
+
+
+
+
+       <div>
+         {resDetails[5]?.success ?<div className='flex justify-between bg-blue-500/30 p-5 border-l-4 rounded-2xl border-l-green-400'>
+      <div>
+        <p className='text-sm text-gray-400'>Dag No</p>
+        <p className='text-2xl font-medium'>{resDetails[5]?.originaldagNo}</p>
+      </div>
+  
+       <div>
+   <p className='border-green-400 border-2 text-green-400 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>verified</span></p>
+     
+        </div>
+    
+    </div>: <div className='flex justify-between bg-red-400/30 p-5 border-l-4 rounded-2xl border-l-red-500'>
+      <div>
+        <p className='text-sm text-gray-400'>
+          Dag No
+        </p>
+        <p className='text-2xl font-medium'>
+         {resDetails[5]?.originaldagNo}  <span className='text-sm text-gray-400'>registered</span>
+        </p>
+        <p className='text-2xl font-medium'>
+          {resDetails[5]?.fakedagNo} <span className='text-sm text-gray-400'>submitted</span>
+        </p>
+      </div>
+    <div>
+  <p className='text-red-600 border-red-400 border-2 flex-row items-start flex-nowrap  font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl md:items-center'>
+        <X  className=' size-5 ' /><span className='text-nowrap'>Not verified</span>
+      </p>
+
+
+      </div>
+    </div> }   
+
+   
+      </div>
+
+
+
+
+       <div>
+         {resDetails[6]?.success ?<div className='flex justify-between bg-blue-500/30 p-5 border-l-4 rounded-2xl border-l-green-400'>
+      <div>
+        <p className='text-sm text-gray-400'>Mouza</p>
+        <p className='text-2xl font-medium'>{resDetails[6]?.originalmouza}</p>
+      </div>
+  
+       <div>
+   <p className='text-green-400 border-green-400 border-2 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>verified</span></p>
+     
+        </div>
+    
+    </div>: <div className='flex justify-between bg-red-400/30 p-5 border-l-4 rounded-2xl border-l-red-500'>
+      <div>
+        <p className='text-sm text-gray-400'>
+         Mouza
+        </p>
+        <p className='text-2xl font-medium'>
+         {resDetails[6]?.originalmouza}  <span className='text-sm text-gray-400'>registered</span>
+        </p>
+        <p className='text-2xl font-medium'>
+          {resDetails[6]?.fakemouza} <span className='text-sm text-gray-400'>submitted</span>
+        </p>
+      </div>
+    <div>
+  <p className='text-red-600 border-red-400 border-2 flex-row items-start flex-nowrap  font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl md:items-center'>
+        <X  className=' size-5 ' /><span className='text-nowrap'>Not verified</span>
+      </p>
+
+
+      </div>
+    </div> }   
+
+   
+      </div>
+
+
+
+      
+            <div>
+         {resDetails[7]?.success ?<div className='flex justify-between bg-blue-500/30 p-5 border-l-4 rounded-2xl border-l-green-400'>
+      <div>
+        <p className='text-sm text-gray-400'>Land Area</p>
+        <p className='text-2xl font-medium'>{resDetails[7]?.originallandArea}</p>
+      </div>
+  
+       <div>
+   <p className='text-green-400 border-green-400 border-2 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>verified</span></p>
+     
+        </div>
+    
+    </div>: <div className='flex justify-between bg-red-400/30 p-5 border-l-4 rounded-2xl border-l-red-500'>
+      <div>
+        <p className='text-sm text-gray-400'>
+        Land Area
+        </p>
+        <p className='text-2xl font-medium'>
+         {resDetails[7]?.originallandArea}  <span className='text-sm text-gray-400'>registered</span>
+        </p>
+        <p className='text-2xl font-medium'>
+          {resDetails[7]?.fakelandArea} <span className='text-sm text-gray-400'>submitted</span>
+        </p>
+      </div>
+    <div>
+  <p className='text-red-600 border-red-400 border-2 flex-row items-start flex-nowrap  font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl md:items-center'>
+        <X  className=' size-5 ' /><span className='text-nowrap'>Not verified</span>
+      </p>
+
+
+      </div>
+    </div> }   
+
+   
+      </div>
+
+
+
+
+
+            <div>
+         {resDetails[8]?.success ?<div className='flex justify-between bg-blue-500/30 p-5 border-l-4 rounded-2xl border-l-green-400'>
+      <div>
+        <p className='text-sm text-gray-400'>Unit</p>
+        <p className='text-2xl font-medium'>{resDetails[8]?.originallandUnit}</p>
+      </div>
+  
+       <div>
+   <p className='text-green-400 border-green-400 border-2 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>verified</span></p>
+     
+        </div>
+    
+    </div>: <div className='flex justify-between bg-red-400/30 p-5 border-l-4 rounded-2xl border-l-red-500'>
+      <div>
+        <p className='text-sm text-gray-400'>
+         Unit
+        </p>
+        <p className='text-2xl font-medium'>
+         {resDetails[8]?.originallandUnit}  <span className='text-sm text-gray-400'>registered</span>
+        </p>
+        <p className='text-2xl font-medium'>
+          {resDetails[8]?.fakelandUnit} <span className='text-sm text-gray-400'>submitted</span>
+        </p>
+      </div>
+    <div>
+  <p className='text-red-600 border-red-400 border-2 flex-row items-start flex-nowrap  font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl md:items-center'>
+        <X  className=' size-5 ' /><span className='text-nowrap'>Not verified</span>
+      </p>
+
+
+      </div>
+    </div> }   
+
+   
+      </div>
+
+
+
+
+
+            <div>
+         {resDetails[9]?.success ?<div className='flex justify-between bg-blue-500/30 p-5 border-l-4 rounded-2xl border-l-green-400'>
+      <div>
+        <p className='text-sm text-gray-400'>Date</p>
+        <p className='text-2xl font-medium'>{resDetails[9]?.originalregistrationDate}</p>
+      </div>
+  
+       <div>
+   <p className='text-green-400 border-green-400 border-2 font-bold bg-green-600/25 flex px-2 py-1 rounded-2xl items-center'><Check className=' size-5 '   /><span>verified</span></p>
+     
+        </div>
+    
+    </div>: <div className='flex justify-between bg-red-400/30 p-5 border-l-4 rounded-2xl border-l-red-500'>
+      <div>
+        <p className='text-sm text-gray-400'>
+         Mouza
+        </p>
+        <p className='text-2xl font-medium'>
+         {resDetails[9]?.originalregistrationDate}  <span className='text-sm text-gray-400'>registered</span>
+        </p>
+        <p className='text-2xl font-medium'>
+          {resDetails[9]?.fakeregistrationDate} <span className='text-sm text-gray-400'>submitted</span>
+        </p>
+      </div>
+    <div>
+  <p className='text-red-600 flex-row border-red-400 border-2 items-start flex-nowrap  font-bold bg-red-600/25 flex px-2 py-1 rounded-2xl md:items-center'>
+        <X  className=' size-5 ' /><span className='text-nowrap'>Not verified</span>
+      </p>
+
+
+      </div>
+    </div> }   
+
+   
+      </div>
+
+     
 
 
 
