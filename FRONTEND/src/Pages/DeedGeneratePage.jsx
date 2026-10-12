@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { api } from '../utils/api';
+  import { ToastContainer, toast } from 'react-toastify';
 
 function DeedGeneratePage() {
 
@@ -22,9 +23,10 @@ function DeedGeneratePage() {
 
             console.log(res)
             setDeeds({ ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })
-          setSuccess(res?.data?.message2)
+          toast.success(res?.data?.message2)
         }catch (error) {
             console.log(error.message)
+            toast.error(error.response.data.message)
         }
     }
 
