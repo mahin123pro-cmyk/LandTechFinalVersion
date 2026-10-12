@@ -107,9 +107,7 @@ setShow(!show)
 </div>
       {/* <Link to="/deedmaker" className='inline cursor-pointer'>Deed Maker</Link> */}
 
-<div>
-  <Link to="/allid">All Id Here</Link>
-</div>
+
       <div className='bg-blue-950 p-5 overflow-x-hidden w-full md:min-h-screen md:px-20 flex flex-col md:flex-row  '>
         <div className='flex-1 flex flex-col gap-y-7 mt-10'>
 
@@ -141,6 +139,10 @@ setShow(!show)
         </div>
 
       </div>
+
+      <div>
+  <Link to="/allid">All Id Here</Link>
+</div>
       <div className='bg-gray-50 px-5 w-full  md:px-20 pt-6  scroll-mt-20' id='howitwork'>
         <div className='pt-5 md:pt-14 ' >
           <h1 className='text-black md:font-semibold text-4xl' >How verification works</h1>
