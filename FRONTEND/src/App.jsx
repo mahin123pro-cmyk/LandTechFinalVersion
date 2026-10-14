@@ -48,7 +48,7 @@ setShow(!show)
   }
   return (
     <div className=''>
-      <div>LV-D-702FBE9B2052E518</div>
+
       <nav className='flex justify-between px-4 md:justify-around items-center md:px-10 fixed left-0 right-0 bg-white z-10 md:p-4'>
 
         <div className=' flex  items-center gap-x-7'>
