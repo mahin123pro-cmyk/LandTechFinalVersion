@@ -7,6 +7,7 @@ const app=express();
 
 app.use(cors({
     origin: ["http://localhost:5173",
+        "http://192.168.0.105:5173",
         "https://vumi-three.vercel.app",
         
     ],
