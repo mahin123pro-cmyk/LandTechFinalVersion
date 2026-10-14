@@ -135,9 +135,9 @@ function GeneratePdf({ detailsForPdf,id }) {
   return (
     <div className="p-4">
       <div className="flex gap-3">
-        <button
+        <button 
           onClick={downloadPdf}
-          className="rounded bg-green-600 px-4 py-2 text-white"
+          className="rounded bg-green-600 px-4 py-2 text-white cursor-pointer"
         >
           Download PDF
         </button>
