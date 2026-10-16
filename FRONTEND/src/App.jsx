@@ -74,7 +74,7 @@ setShow(!show)
           
             <ul className='flex text-lg text-nowrap md:text-2xl font-semibold gap-x-4 text-blue-950'>
               <Link to="/transfer" className=''>দলিল হস্তান্তর</Link>
-              <Link to="/deedgenerate">Deed Generate</Link>
+              <Link to="/deedgenerate">দলিল প্রস্তুতকরণ</Link>
               
             </ul>
           
