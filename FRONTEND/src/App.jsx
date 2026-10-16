@@ -73,7 +73,7 @@ setShow(!show)
         <div className='hidden md:flex items-center  gap-x-5 '>
           
             <ul className='flex text-lg text-nowrap md:text-2xl font-semibold gap-x-4 text-blue-950'>
-              <Link to="/transfer" className=''>Transfer Deed</Link>
+              <Link to="/transfer" className=''>দলিল হস্তান্তর</Link>
               <Link to="/deedgenerate">Deed Generate</Link>
               
             </ul>
