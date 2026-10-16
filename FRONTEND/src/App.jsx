@@ -113,9 +113,9 @@ setShow(!show)
         <div className='flex-1 flex flex-col gap-y-7 mt-10'>
 
           <div className='w-full mt-10 mb-1'>
-            <h1 className='text-white text-4xl text-nowrap md:text-6xl font-bold' >Verify Ownership.</h1>
-            <h1 className='text-zinc-300 text-4xl text-nowrap md:text-6xl font-bold' >Verify Property.</h1>
-            <h1 className='text-zinc-300 text-4xl text-nowrap md:text-6xl  font-bold '>Verify Trust.</h1>
+            <h1 className='text-white text-4xl text-nowrap md:text-6xl font-bold' >মালিকানা যাচাইকরণ</h1>
+            <h1 className='text-zinc-300 text-4xl text-nowrap md:text-6xl font-bold' >সম্পত্তি যাচাইকরণ</h1>
+            <h1 className='text-zinc-300 text-4xl text-nowrap md:text-6xl  font-bold '>বিশ্বস্ততা যাচাইকরণ</h1>
           </div>
           <div className='mb-5'>
             <p className='text-zinc-300 text-xl font-thin md:text-2xl'>কয়েক সেকেন্ডেই সরকারি রেকর্ডের সঙ্গে মিলিয়ে আপনার জমির দলিল যাচাই করুন!<b>LandVerify-</b>এর মাধ্যমে দলিলে কোনো জালিয়াতি বা কারসাজি আছে কি না শনাক্ত করুন, বর্তমান মালিকের পরিচয় নিশ্চিত করুন এবং জমির মালিকানা পরিবর্তনের সম্পূর্ণ ইতিহাস দেখুন।</p>
