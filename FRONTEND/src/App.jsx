@@ -78,7 +78,7 @@ setShow(!show)
               
             </ul>
           
-          <button className='hidden bg-green-700 cursor-pointer md:flex rounded items-center px-2 py-1 text-sm md:p-3' onClick={verificationNavigate}><FileText size={15} className='text-white text-sm' /> <span className='text-white'>Verify a Document</span></button>
+          <button className='hidden bg-green-700 cursor-pointer md:flex rounded items-center px-2 py-1 text-sm md:p-3' onClick={verificationNavigate}><FileText size={15} className='text-white text-sm' /> <span className='text-white'>দলিল যাচাইকরণ</span></button>
 
         </div>
         <div className='md:hidden'>
