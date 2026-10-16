@@ -126,7 +126,7 @@ setShow(!show)
             <Search onClick={submitSearch} size={68} className='bg-gray-300 px-3 transition-colors duration-1000 hover:bg-blue-500 hover:text-white' />
           </div>
           <div className='mb-3'>
-            <button className='bg-green-600 cursor-pointer  flex rounded md:px-5 md:py-5 md:text-2xl px-3 py-2' onClick={verificationNavigate}><FileText className='text-white size-5 font-semibold md:size-10' /> <span className='text-white font-semibold ml-2'>Verify a Document</span></button>
+            <button className='bg-green-600 cursor-pointer  flex rounded md:px-5 md:py-5 md:text-2xl px-3 py-2' onClick={verificationNavigate}><FileText className='text-white size-5 font-semibold md:size-10' /> <span className='text-white font-semibold ml-2'>দলিল যাচাইকরণ</span></button>
 
           </div>
 
