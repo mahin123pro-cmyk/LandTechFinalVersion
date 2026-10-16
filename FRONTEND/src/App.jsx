@@ -118,7 +118,7 @@ setShow(!show)
             <h1 className='text-zinc-300 text-4xl text-nowrap md:text-6xl  font-bold '>Verify Trust.</h1>
           </div>
           <div className='mb-5'>
-            <p className='text-zinc-300 text-xl font-thin md:text-2xl'>Check any land deed against the official registry in seconds. LandVerify detects tampering, confirms the current owner, and shows the full chain of ownership.</p>
+            <p className='text-zinc-300 text-xl font-thin md:text-2xl'>কয়েক সেকেন্ডেই সরকারি রেকর্ডের সঙ্গে মিলিয়ে আপনার জমির দলিল যাচাই করুন!<br></br>LandVerify-এর মাধ্যমে দলিলে কোনো জালিয়াতি বা কারসাজি আছে কি না শনাক্ত করুন, বর্তমান মালিকের পরিচয় নিশ্চিত করুন এবং জমির মালিকানা পরিবর্তনের সম্পূর্ণ ইতিহাস দেখুন।</p>
 
           </div>
           <div className='flex bg-amber-50 rounded-2xl justify-between '>
