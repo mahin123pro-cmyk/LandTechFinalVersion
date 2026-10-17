@@ -84,7 +84,7 @@ navigate(`/verification/${id}`)
           <label className=''>
             Owner NId No :
           </label>
-          <input style={{borderWidth:1}} className='  border-zinc-300 px-4 rounded-xl py-3' type='text' placeholder='e.g. 390309949' name='nid' value={deeds.nid} onChange={handleChange} />
+          <input style={{borderWidth:1}} className='  border-zinc-300 px-4 rounded-xl py-3' type='text' placeholder='e.g. 390309947' name='nid' value={deeds.nid} onChange={handleChange} />
         </div>
 
 
