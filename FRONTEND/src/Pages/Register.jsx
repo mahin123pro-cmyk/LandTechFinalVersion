@@ -18,7 +18,8 @@ export default function Register() {
   async function handleSubmit(e) {
     e.preventDefault();
 const res=await api.post("/api/auth/register",{username,email,password})
-if(res.status==201){
+console.log(res)
+if(res.status===201){
   navigate("/otp")
 }
     setError("");
