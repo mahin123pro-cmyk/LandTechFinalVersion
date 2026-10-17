@@ -57,11 +57,11 @@ setShow(!show)
 
           <div className='hidden md:block'>
             <ul className='flex flex-row text-gray-500 cursor-pointer text-xl gap-x-4'>
-              <a href='#howitwork'>How it works
+              <a href='#howitwork'>এটা যেভাবে কাজ করে
               </a>
-              <a href='#features'>Features
+              <a href='#features'>বৈশিষ্ট্যসমূহ
               </a>
-              <a href='#security'>Security</a>
+              <a href='#security'>নিরাপত্তা</a>
               
             </ul>
           </div>
