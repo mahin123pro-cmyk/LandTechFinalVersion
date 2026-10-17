@@ -15,12 +15,12 @@ function App() {
   { number: "৩", headline: "যাচাইকরণ প্রতিবেদন পান", details: "ফলাফল, বর্তমান মালিক এবং মালিকানার ইতিহাস দেখুন। প্রতিবেদনটি PDF হিসেবে ডাউনলোড করুন।" }
   ]
 
-  const EverythingText = [{ number: <FileCheck className="size-7" />, headline: "Deed verification", details: "Confirm a deed is genuine and matches the registered version." },
-  { number: <TriangleAlert className="size-7" />, headline: "Tamper detection", details: "Spot altered names, areas, dates, and signatures before you sign." },
+  const EverythingText = [{ number: <FileCheck className="size-7" />, headline: "দলিল যাচাইকরণ", details: "দলিলটি আসল এবং নিবন্ধিত কপির সঙ্গে সামঞ্জস্যপূর্ণ কি না, তা নিশ্চিত করুন।" },
+  { number: <TriangleAlert className="size-7" />, headline: "জালিয়াতি শনাক্তকরণ", details: "স্বাক্ষর করার আগে পরিবর্তিত নাম, জমির পরিমাণ, তারিখ ও স্বাক্ষর শনাক্ত করুন।" },
   {
-    number: <Clock4 className="size-7" />, headline: "Ownership history", details: "Trace every transfer on a parcel, from first registration to today."
+    number: <Clock4 className="size-7" />, headline: "মালিকানার ইতিহাস", details: "প্রথম নিবন্ধন থেকে আজ পর্যন্ত জমির প্রতিটি মালিকানা হস্তান্তরের তথ্য অনুসরণ করুন।"
   }, {
-    number: <QrCode className="size-7" />, headline: "QR and hash checks", details: "Verify instantly by scanning a code or pasting a document hash."
+    number: <QrCode className="size-7" />, headline: "QR কোড ও হ্যাশ যাচাই", details: "কোড স্ক্যান করে বা নথির হ্যাশ পেস্ট করে তাৎক্ষণিকভাবে যাচাই করুন।"
   }
   ]
 
