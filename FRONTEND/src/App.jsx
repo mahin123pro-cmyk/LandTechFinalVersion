@@ -87,22 +87,22 @@ setShow(!show)
       </nav>
 
 <div
-  className={`md:hidden fixed inset-0 z-50 flex h-full w-full flex-col items-center justify-center gap-5 bg-amber-300 text-amber-100 transition-transform duration-300 ${
+  className={`md:hidden text-2xl fixed inset-0 z-50 flex h-full w-full flex-col items-center justify-center gap-5 bg-blue-950 text-amber-100 transition-transform duration-300 ${
     show ? "translate-x-0" : "-translate-x-full"
   }`}
 >
   <button
     onClick={handleshow}
-    className="absolute right-5 top-5 text-black"
+    className="absolute right-5 top-5 text-white"
   >
     Close ✕
   </button>
 
-  <Link to="/transfer" onClick={() => setShow(false)}>
+  <Link to="/admin/transfer" onClick={() => setShow(false)}>
     Transfer Deed
   </Link>
 
-  <Link to="/deedgenerate" onClick={() => setShow(false)}>
+  <Link to="/admin/deedgenerate" onClick={() => setShow(false)}>
     Deed Generate
   </Link>
 </div>

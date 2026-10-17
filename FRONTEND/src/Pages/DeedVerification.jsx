@@ -24,7 +24,8 @@ const [resDetails,setResDetails]=useState([])
             const res = await api.post("/api/deed/verification", deeds);
 
           if(res.status===200){
-navigate("")
+            const id=res?.data?.message
+navigate(`https://vumi-three.vercel.app/verification/${id}`)
           } 
          if(res.status===201){
              setDeeds({deedId:"", ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })
