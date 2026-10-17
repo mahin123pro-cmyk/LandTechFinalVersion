@@ -239,10 +239,13 @@ Team Name: Consonants
 Team ID: LA-38
 
 ```
-| Name | Student ID | Department |
-|---|---|---|
-| Mohaimenur Rahman Mahin | 262-15-249 | CSE |
-| Khaled Aman | 262-15-641 | CSE |
+|-------------------------|------------|------------|
+|            Name         | Student ID | Department |
+|-------------------------|------------|------------|
+| Mohaimenur Rahman Mahin | 262-15-249 |    CSE     |
+|        Khaled Aman      | 262-15-641 |    CSE     |
+|-------------------------|------------|------------|
+
 ```
 ## ⚖️ Disclaimer
 
