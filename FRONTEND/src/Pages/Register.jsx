@@ -17,7 +17,8 @@ export default function Register() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-const res=await api.post("/api/auth/register",{username,email,password})
+try{
+  const res=await api.post("/api/auth/register",{username,email,password})
 console.log(res)
 
   navigate("/otp")
@@ -25,6 +26,9 @@ console.log(res)
     setError("");
     setSuccess("");
     setSubmitting(true);
+}catch(error){
+  setError(error?.response?.data?.message)
+}
 
   }
 
