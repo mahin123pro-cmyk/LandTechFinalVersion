@@ -73,8 +73,8 @@ setShow(!show)
         <div className='hidden md:flex items-center  gap-x-5 '>
           
             <ul className='flex text-lg text-nowrap md:text-2xl font-semibold gap-x-4 text-blue-950'>
-              <Link to="/transfer" className=''>দলিল হস্তান্তর</Link>
-              <Link to="/deedgenerate">দলিল প্রস্তুতকরণ</Link>
+              <Link to="admin/transfer" className=''>দলিল হস্তান্তর</Link>
+              <Link to="/admin/deedgenerate">দলিল প্রস্তুতকরণ</Link>
               
             </ul>
           
