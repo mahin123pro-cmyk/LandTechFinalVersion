@@ -241,9 +241,7 @@ Team ID: LA-38
 Name	Student ID	Department
 Mohaimenur Rahman Mahin	262-15-249	Computer Science and Engineering
 Khaled Aman	262-15-641	Computer Science and Engineering
-Mentors
-Faculty Mentor: Ms. Subarna Akter Liza — Lecturer, CSE
-Industry Mentor: MD Shoaib Khan — CSE-TECH
+
 ## ⚖️ Disclaimer
 
 VUMI is a digital document verification initiative intended to help identify potential document tampering and improve access to verification information.
