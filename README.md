@@ -238,10 +238,12 @@ These enhancements depend on implementation priorities, available resources, and
 Team Name: Consonants
 Team ID: LA-38
 
-Name	Student ID	Department
-Mohaimenur Rahman Mahin	262-15-249	Computer Science and Engineering
-Khaled Aman	262-15-641	Computer Science and Engineering
-
+```
+| Name | Student ID | Department |
+|---|---|---|
+| Mohaimenur Rahman Mahin | 262-15-249 | CSE |
+| Khaled Aman | 262-15-641 | CSE |
+```
 ## ⚖️ Disclaimer
 
 VUMI is a digital document verification initiative intended to help identify potential document tampering and improve access to verification information.
