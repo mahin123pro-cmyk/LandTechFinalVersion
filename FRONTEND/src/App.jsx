@@ -24,11 +24,11 @@ function App() {
   }
   ]
 
-  const BuiltPartData = [{ logo: <Hash className="size-7 text-green-400" />, headline: "Hash fingerprints", details: "Any edit to a registered document, even one character, changes its SHA-256 hash." },
+  const BuiltPartData = [{ logo: <Hash className="size-7 text-green-400" />, headline: "হ্যাশ ফিঙ্গারপ্রিন্ট", details: "নিবন্ধিত নথিতে যেকোনো পরিবর্তন, এমনকি একটি অক্ষরের পরিবর্তনও এর SHA-256 হ্যাশ পরিবর্তন করে।" },
 
-  { logo: <Lock className="size-7 text-green-400" />, headline: "Encrypted in transit and at rest", details: "Uploaded files are encrypted and deleted after the check unless you save the report." },
-  { logo: <Eye className="size-7 text-green-400" />, headline: "Full audit trail", details: "Every lookup and registry update is logged and reviewable by authorised officers." }, {
-    logo: <BadgeCheck className="size-7 text-green-400" />, headline: "Role-based access", details: "Land-office staff, legal professionals, and the public each see only what they need."
+  { logo: <Lock className="size-7 text-green-400" />, headline: "তথ্য আদান-প্রদান ও সংরক্ষণের সময় এনক্রিপশন", details: "আপলোড করা ফাইলগুলো এনক্রিপ্ট করা হয় এবং প্রতিবেদন সংরক্ষণ না করলে যাচাই শেষে মুছে ফেলা হয়।" },
+  { logo: <Eye className="size-7 text-green-400" />, headline: "সম্পূর্ণ অডিট ট্রেইল", details: "প্রতিটি অনুসন্ধান ও রেজিস্ট্রির হালনাগাদ কার্যক্রমের রেকর্ড রাখা হয়, যা অনুমোদিত কর্মকর্তারা পর্যালোচনা করতে পারেন।" }, {
+    logo: <BadgeCheck className="size-7 text-green-400" />, headline: "ভূমিকা-ভিত্তিক প্রবেশাধিকার", details: "ভূমি অফিসের কর্মী, আইন পেশাজীবী এবং সাধারণ জনগণ—প্রত্যেকে শুধু তাঁদের প্রয়োজনীয় তথ্য দেখতে পারেন।"
   }
   ]
 
