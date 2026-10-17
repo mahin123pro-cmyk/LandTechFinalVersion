@@ -6,7 +6,6 @@ import { allId } from "../controllers/allid.js";
 import { deedDetails } from "../controllers/deedDetails.js";
 // import { register, verification } from "../controllers/Register.controller.js";
 
-
 const deed=express.Router();
 
 

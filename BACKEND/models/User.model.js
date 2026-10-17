@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    name: {
+    username: {
       type: String,
       required: true,
       trim: true,
@@ -26,9 +26,12 @@ const userSchema = new mongoose.Schema(
     refreshTokenHash: {
       type: String,
       default: null,
-    },
+    },verified: {
+        type: Boolean,
+        default: false
+    }
   },
   { timestamps: true }
 );
 
-export const User = mongoose.model("User", userSchema);
+export const userModel = mongoose.model("User", userSchema);

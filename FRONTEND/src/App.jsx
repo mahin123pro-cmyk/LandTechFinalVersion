@@ -1,5 +1,5 @@
 import { BadgeCheck, Clock4, DatabaseCheck, Eye, FileCheck, FileText, Hash, Lock, PanelRightOpen, QrCode, Search, TriangleAlert } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Link, useNavigate } from 'react-router-dom'
 import deedpic from './assets/deed_of_sale.png'
@@ -73,8 +73,13 @@ setShow(!show)
         <div className='hidden md:flex items-center  gap-x-5 '>
           
             <ul className='flex text-lg text-nowrap md:text-2xl font-semibold gap-x-4 text-blue-950'>
+<<<<<<< HEAD
               <Link to="/transfer" className=''>দলিল হস্তান্তর</Link>
               <Link to="/deedgenerate">দলিল প্রস্তুতকরণ</Link>
+=======
+              <Link to="/admin/transfer" className=''>Transfer Deed</Link>
+              <Link to="/admin/deedgenerate">Deed Generate</Link>
+>>>>>>> 5070a95 (Add protected route and admin)
               
             </ul>
           
@@ -121,7 +126,7 @@ setShow(!show)
             <p className='text-zinc-300 text-xl font-thin md:text-2xl'>কয়েক সেকেন্ডেই সরকারি রেকর্ডের সঙ্গে মিলিয়ে আপনার জমির দলিল যাচাই করুন!<b>LandVerify-</b>এর মাধ্যমে দলিলে কোনো জালিয়াতি বা কারসাজি আছে কি না শনাক্ত করুন, বর্তমান মালিকের পরিচয় নিশ্চিত করুন এবং জমির মালিকানা পরিবর্তনের সম্পূর্ণ ইতিহাস দেখুন।</p>
 
           </div>
-          <div className='flex bg-amber-50 rounded-2xl justify-between '>
+          <div className='flex bg-amber-50 justify-between '>
             <input type='text' onChange={((e) => { setSearch(e.target.value) })} className='placeholder-gray-300 border-white w-full md:text-3xl   px-4 py-3' style={{ borderWidth: 1 }} placeholder='DV-ID:94040955' />
             <Search onClick={submitSearch} size={68} className='bg-gray-300 px-3 transition-colors duration-1000 hover:bg-blue-500 hover:text-white' />
           </div>

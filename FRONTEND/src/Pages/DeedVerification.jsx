@@ -24,7 +24,7 @@ const [resDetails,setResDetails]=useState([])
             const res = await api.post("/api/deed/verification", deeds);
 
           if(res.status===200){
-console.log(res.data)
+navigate("")
           } 
          if(res.status===201){
              setDeeds({deedId:"", ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })

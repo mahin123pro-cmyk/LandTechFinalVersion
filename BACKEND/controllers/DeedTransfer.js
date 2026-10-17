@@ -2,6 +2,7 @@ import { deedModel } from "../models/deedModel.js";
 import { generateHash } from "../utils/generateHash.js";
 import crypto from "crypto"
 
+
 export const deedtransfer = async (req, res) => {
 
     try {

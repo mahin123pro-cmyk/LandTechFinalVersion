@@ -35,7 +35,10 @@ function DeedGeneratePage() {
         setDeeds({ ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })
     }
 
-
+const handleLogOut=()=>{
+  localStorage.removeItem("token")
+  navigate("/")
+}
 
     return (
      <div className='w-full px-4  bg-cover bg-gray-100 text-zinc-900  md:px-20 overflow-x-hidden'>
@@ -47,7 +50,7 @@ function DeedGeneratePage() {
           </div>   
           
           <h1 className='text-3xl mt-10 mb-5 md:text-5xl font-semibold  md:font-bold mx-auto text-center'>
-            Make a land record
+            Make a land record <button onClick={handleLogOut}>Logout</button>
           </h1>
       
       <div className='flex flex-col md:flex-row gap-5 w-full mb-10 '>
