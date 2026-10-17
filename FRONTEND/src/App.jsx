@@ -10,9 +10,9 @@ import logos from "./assets/logos.png"
 function App() {
 
 
-  const howCanweVarificationText = [{ number: "1", headline: "Submit the document", details: "Upload a scan or PDF, enter the deed number, or scan the QR code printed on the deed." },
-  { number: "2", headline: "We check it against the registry", details: "LandVerify compares the document's hash and details with the official record and looks for edits." },
-  { number: "3", headline: "Get a verification report", details: "See the result, the current owner, and the ownership history. Download the report as a PDF." }
+  const howCanweVarificationText = [{ number: "১", headline: "নথি জমা দিন", details: "একটি স্ক্যান কপি বা PDF আপলোড করুন, দলিল নম্বর লিখুন অথবা দলিলে মুদ্রিত QR কোড স্ক্যান করুন।" },
+  { number: "২", headline: "আমরা রেজিস্ট্রির সঙ্গে এটি যাচাই করি।", details: "LandVerify নথির হ্যাশ ও বিবরণ সরকারি রেকর্ডের সঙ্গে মিলিয়ে দেখে এবং কোনো পরিবর্তন করা হয়েছে কি না তা যাচাই করে।" },
+  { number: "৩", headline: "যাচাইকরণ প্রতিবেদন পান", details: "ফলাফল, বর্তমান মালিক এবং মালিকানার ইতিহাস দেখুন। প্রতিবেদনটি PDF হিসেবে ডাউনলোড করুন।" }
   ]
 
   const EverythingText = [{ number: <FileCheck className="size-7" />, headline: "Deed verification", details: "Confirm a deed is genuine and matches the registered version." },
