@@ -25,7 +25,7 @@ const [resDetails,setResDetails]=useState([])
 
           if(res.status===200){
             const id=res?.data?.message
-navigate(`/${id}`)
+navigate(`/verification/${id}`)
           } 
          if(res.status===201){
              setDeeds({deedId:"", ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })
