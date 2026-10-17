@@ -7,6 +7,7 @@ import deedpic from './assets/deed_of_sale.png'
 import logos from "./assets/logos.png"
 
 
+
 function App() {
 
 
