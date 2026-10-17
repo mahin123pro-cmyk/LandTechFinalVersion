@@ -207,35 +207,35 @@ setShow(!show)
       <div className=' flex flex-col px-5 md:flex-row justify-around md:px-20 py-10' >
         <div className= 'w-full md:w-1/5'>
           <div className=' flex items-center'><img src={logos} className='w-14' /><span className='font-bold text-blue-950 text-4xl'>VUMI</span></div>
-          <p>Deed and ownership verification for buyers, owners, legal professionals, and land offices.</p>
+          <p>ক্রেতা, মালিক, আইন পেশাজীবী এবং ভূমি অফিসের জন্য দলিল ও মালিকানা যাচাইকরণ।</p>
 
 
         </div>
         <div className='w-full md:w-1/5 '>
-          <h1 className='font-semibold text-xl mb-3'>Platform</h1>
+          <h1 className='font-semibold text-xl mb-3'>প্ল্যাটফর্ম</h1>
           <div className='text-gray-400'>
-            <p>Verify a Document</p>
-            <p>Search Property</p>
-            <p>QR Verification</p>
+            <p>নথি যাচাই করুন</p>
+            <p>সম্পত্তি খুঁজুন</p>
+            <p>QR কোড যাচাই</p>
           </div>
         </div>
 
         <div className=' w-full md:w-1/5 '>
-          <h1 className='font-semibold text-xl mb-3'>For professionals</h1>
+          <h1 className='font-semibold text-xl mb-3'>পেশাজীবীদের জন্য</h1>
           <div className='text-gray-400'>
-            <p>Legal Teams </p>
-            <p>Land Offices </p>
-            <p> Api Access</p>
+            <p>আইনি দল</p>
+            <p>ভূমি অফিস</p>
+            <p>API অ্যাক্সেস</p>
 
 
           </div>
         </div>
         <div className='w-full md:w-1/5 '>
-          <h1 className='font-semibold text-xl mb-3'>Support</h1>
+          <h1 className='font-semibold text-xl mb-3'>সহায়তা</h1>
           <div className='text-gray-400'>
-            <p>Help Center</p>
-            <p>Contact</p>
-            <p>Report a deed</p>
+            <p>সহায়তা কেন্দ্র</p>
+            <p>যোগাযোগ</p>
+            <p>দলিল সম্পর্কে অভিযোগ জানান</p>
           </div>
         </div>
       </div>
