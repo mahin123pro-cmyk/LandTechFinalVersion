@@ -97,10 +97,10 @@ Provide an accessible experience for Bangla-speaking users.
 
 Allow users to flag suspicious documents for review by authorized personnel.
 
-##🏗️ System Architecture
+## 🏗️ System Architecture
 
 VUMI follows a modular architecture consisting of the frontend, backend API, database, document storage, and verification service.
-
+```
               ┌────────────────────────┐
               │      User / Official   │
               └────────────┬───────────┘
@@ -130,7 +130,7 @@ VUMI follows a modular architecture consisting of the frontend, backend API, dat
                    │ SHA-256 Hash   │   │ Digital        │
                    │ Comparison     │   │ Signature Check│
                    └────────────────┘   └────────────────┘
-
+```
 
 Note: This diagram illustrates the proposed architecture. Actual integrations depend on the implemented application and available authorized records.
 
@@ -144,7 +144,7 @@ QR Code Generation	qrcode, qrcode.react	Generate and display QR codes
 Digital Signatures	Public-key cryptography	Validate document origin and integrity
 Frontend Deployment	Vercel	Host the web application
 Backend Deployment	Render	Host the API server
-🔄 System Workflow
+## 🔄 System Workflow
 Step 1: Document Registration
 
 An authorized official uploads a land document and verifies its source according to the applicable registration procedure.
