@@ -167,7 +167,7 @@ setShow(!show)
 
       <div className='bg-gray-50 px-5 w-full md:px-20 pt-20 pb-6 ' >
         <div className='pt-5  md:pt-14 scroll-mt-20' id="features">
-          <h1 className='text-black md:font-semibold text-4xl'>Everything you need to confirm a property is what it claims to be</h1>
+          <h1 className='text-black md:font-semibold text-4xl'>কোনো সম্পত্তি আসলেই যা দাবি করা হচ্ছে, তা নিশ্চিত করতে আপনার প্রয়োজনীয় সবকিছু।</h1>
 
 
         </div>
