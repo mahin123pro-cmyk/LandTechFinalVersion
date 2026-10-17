@@ -63,39 +63,39 @@ The result helps users understand whether the document matches the trusted digit
 ## ✨ Key Features
 1. QR-Based Document Verification
 
-Scan a QR code to access a document's verification page quickly and conveniently.
+    Scan a QR code to access a document's verification page quickly and conveniently.
 
 2. SHA-256 Tamper Detection
 
-Calculate and compare cryptographic hashes to identify changes in a document's contents.
+   Calculate and compare cryptographic hashes to identify changes in a document's contents.
 
 3. Digital Signature Validation
 
-Validate digital signatures using trusted public keys to help establish document origin and integrity.
+   Validate digital signatures using trusted public keys to help establish document origin and integrity.
 
 4. Document ID Lookup
 
-Verify documents using a unique document identifier without requiring a QR code.
+   Verify documents using a unique document identifier without requiring a QR code.
 
 5. Secure Administrative Access
 
-Restrict document registration and other sensitive operations to authorized personnel.
+    Restrict document registration and other sensitive operations to authorized personnel.
 
 6. Document Metadata and Status
 
-Display permitted document information and verification status while protecting sensitive personal data.
+    Display permitted document information and verification status while protecting sensitive personal data.
 
 7. Audit Trail
 
-Maintain logs of document registration, authorized changes, and verification activities.
+    Maintain logs of document registration, authorized changes, and verification activities.
 
 8. Bangla Language Support
 
-Provide an accessible experience for Bangla-speaking users.
+    Provide an accessible experience for Bangla-speaking users.
 
 9. Fraud Reporting
 
-Allow users to flag suspicious documents for review by authorized personnel.
+    Allow users to flag suspicious documents for review by authorized personnel.
 
 ## 🏗️ System Architecture
 
@@ -134,7 +134,7 @@ VUMI follows a modular architecture consisting of the frontend, backend API, dat
 
 Note: This diagram illustrates the proposed architecture. Actual integrations depend on the implemented application and available authorized records.
 
-##🛠️ Technology Stack
+## 🛠️ Technology Stack
 Component	Technology	Purpose
 Frontend	React.js	User interface and verification pages
 Backend	Node.js, Express.js	API endpoints and application logic
@@ -173,7 +173,7 @@ Step 7: Verification Result
 
 The system displays the verification outcome and records relevant activity in the audit log.
 
-✅ Verification Results
+## ✅ Verification Results
 
 VUMI can present verification results using the following statuses:
 
@@ -184,7 +184,7 @@ Further Verification Required	The record is missing, the signature is invalid or
 
 A verification result indicates document integrity against the system's trusted records. It does not independently establish legal ownership or guarantee that the underlying government record is correct.
 
-🔐 Security Approach
+## 🔐 Security Approach
 
 Security is a core consideration in VUMI's design.
 
