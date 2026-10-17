@@ -15,7 +15,7 @@ export async function register(req, res) {
     const isAlreadyRegistered = await userModel.findOne({email})
 
     if (isAlreadyRegistered) {
-        res.status(409).json({
+      return  res.status(409).json({
             message: "Email already exists"
         })
     }
@@ -41,7 +41,7 @@ export async function register(req, res) {
 
     await sendEmail({email, subject:"OTP Verification",html})
 
-    res.status(201).json({
+   return res.status(201).json({
         message: "User registered successfully",
         user: {
             username: user.username,
