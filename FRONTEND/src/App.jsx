@@ -142,7 +142,7 @@ setShow(!show)
       </div>
 
       <div>
-  <Link to="/allid">All Id Here</Link>
+ 
 </div>
       <div className='bg-gray-50 px-5 w-full  md:px-20 pt-6  scroll-mt-20' id='howitwork'>
         <div className='pt-5 md:pt-14 ' >

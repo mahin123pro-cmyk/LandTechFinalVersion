@@ -40,7 +40,7 @@ const handleLogOut=()=>{
               <Link to="/">Home</Link>
               <Link to="/admin/transfer" className='text-black'>Transfer Deed</Link>
               <Link to="/admin/deedgenerate">Deed Generate</Link>
-              
+              <Link to="/admin/allid">All Deed </Link>
             </ul>
           
           {/* <button className='hidden bg-green-700 cursor-pointer md:flex rounded items-center px-2 py-1 text-sm md:p-3' onClick={verificationNavigate}><FileText size={15} className='text-white text-sm' /> <span className='text-white'>Verify a Document</span></button> */}
@@ -71,6 +71,7 @@ const handleLogOut=()=>{
         <Link to="/admin/deedgenerate" onClick={() => setShow(false)}>
           Deed Generate
         </Link>
+        <Link to="/admin/allid" onClick={() => setShow(false)}>All Deed </Link>
         <button onClick={handleLogOut}>Logout</button>
       </div>
 <Outlet />;

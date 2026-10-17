@@ -38,7 +38,7 @@ const router = createBrowserRouter([
   { path: "/verification/:id", element: <DeedDetails /> },
   
   ,
-      { path: "/allid", element: <AllId />},
+      
 
 {path:"/otp",element:<Verify/>},
 
@@ -51,7 +51,9 @@ const router = createBrowserRouter([
       path: "deedgenerate",
       element: <DeedGeneratePage />,
     },
-    { path: "transfer", element: <DeedTransfer /> }
+    { path: "transfer", element: <DeedTransfer />,
+      
+     },{ path: "allid", element: <AllId />},
   ],
 }
   // Any logged-in user

@@ -9,13 +9,13 @@ function DeedDetails() {
   const { id } = useParams()
   const [ownerDetails, setOwnerDetails] = useState(null);
   const [detailsForPdf,setDetailsForpdf] = useState({name:"",nid:"",district:"",upazila:"",mouza:"",khatianNo:"",hash:""})
-
+const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const data = async () => {
       try {
         const res = await api.post(`/api/deed/verification/${id}`)
-        console.log(res.data.message)
+       
         setOwnerDetails(res?.data?.message)
  setDetailsForpdf({
         name: res?.data?.message.currentOwner?.name ?? "",
@@ -27,8 +27,11 @@ function DeedDetails() {
         hash: res?.data?.message.documentHash ?? ""
       });
       } catch (error) {
-        console.log(error.response.message)
-      }
+        setOwnerDetails(null);
+        
+      } finally {
+  setLoading(false);
+}
 
     }
     data()
@@ -51,7 +54,18 @@ function DeedDetails() {
   { icon: <Ruler />, title: "Land area",value:ownerDetails?.landArea },
 
   ]
+  if (loading) {
   return (
+    <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
+      <div className="text-center">
+        <div className="w-10 h-10 border-4 border-blue-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-lg">Loading deed details...</p>
+      </div>
+    </div>
+  );
+}
+  return (
+    
     <div>
       {
         ownerDetails ? <div className='bg-linear-to-bl/oklch from-blue-900 to-slate-900  h-full w-full text-white'>
@@ -95,9 +109,7 @@ function DeedDetails() {
 </div>
       
       </div> */}
-<div>
-  <GeneratePdf detailsForPdf={detailsForPdf} id={id}/>
-  </div>
+
 
           <div className='p-2 md:px-20 border-white rounded-2xl flex flex-col md:flex-row justify-between '>
             <div className=' p-3 border-white rounded-2xl md:p-10' >
@@ -125,7 +137,9 @@ function DeedDetails() {
                 <QRcode url={`${window.location.origin}/verification/${id}`} />
 
               </div>
-
+<div>
+  <GeneratePdf detailsForPdf={detailsForPdf} id={id}/>
+  </div>
             </div>
 
 
