@@ -1,4 +1,4 @@
-#VUMI — Digital Land Deed & Ownership Verification Platform
+# VUMI — Digital Land Deed & Ownership Verification Platform
 
 A Secure, QR-Based Land Document Verification System for Bangladesh
 
@@ -7,7 +7,7 @@ VUMI is a web-based, mobile-friendly platform designed to help users verify the 
 Project Category: Digital Governance & Land Administration
 Selected Problem: Deed & Ownership Verification
 Target Country: Bangladesh
-##📌 Table of Contents
+## 📌 Table of Contents
 Overview
 Problem Statement
 Proposed Solution
