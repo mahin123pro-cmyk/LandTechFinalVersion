@@ -146,8 +146,8 @@ setShow(!show)
 </div>
       <div className='bg-gray-50 px-5 w-full  md:px-20 pt-6  scroll-mt-20' id='howitwork'>
         <div className='pt-5 md:pt-14 ' >
-          <h1 className='text-black md:font-semibold text-4xl' >How verification works</h1>
-          <p className='text-zinc-600 text-lg md:text-xl max-w-3xl pt-4'>No account needed for a quick check. Upload a deed or scan its QR code and get a result you can rely on.</p>
+          <h1 className='text-black md:font-semibold text-4xl' >যাচাইকরণ যেভাবে কাজ করে</h1>
+          <p className='text-zinc-600 text-lg md:text-xl max-w-3xl pt-4'>দ্রুত যাচাইয়ের জন্য কোনো অ্যাকাউন্টের প্রয়োজন নেই। একটি দলিল আপলোড করুন অথবা এর QR কোড স্ক্যান করুন এবং নির্ভরযোগ্য ফলাফল পান।</p>
         </div>
         <div className='flex flex-col md:flex-row justify-between gap-5 pt-10'>
           {
