@@ -199,75 +199,7 @@ Input validation: Validate uploaded files, document identifiers, and API request
 
 Important: A hash alone does not prove who issued a document. Digital signatures require a trusted key-management process, and the system must obtain its reference records from an authorized source.
 
-🚀 Getting Started
-
-Follow these steps to run the project locally once the source code and dependencies are available.
-
-Prerequisites
-Node.js and npm
-MongoDB instance
-Git
-A code editor, such as Visual Studio Code
-1. Clone the Repository
-git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_PROJECT_DIRECTORY>
-
-
-Replace the placeholders with your actual repository URL and directory name.
-
-2. Install Dependencies
-
-For a project with separate frontend and backend directories:
-
-cd backend
-npm install
-
-cd ../frontend
-npm install
-
-
-Adjust the directory names to match your repository structure.
-
-3. Configure Environment Variables
-
-Create a .env file in the backend directory and configure the variables required by your application.
-
-Example:
-
-PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-CLIENT_URL=http://localhost:5173
-
-
-These are example settings; the actual variable names and values depend on your implementation.
-
-Never commit database credentials, private keys, or other secrets to version control.
-
-4. Start the Backend
-cd backend
-npm run dev
-
-
-Use the appropriate command defined in your backend's package.json.
-
-5. Start the Frontend
-
-In a separate terminal:
-
-cd frontend
-npm run dev
-
-
-Open the local URL printed by the frontend development server.
-
-6. Verify a Document
-Open the VUMI application.
-Scan a registered document's QR code or enter its document ID.
-Review the verification result returned by the backend.
-
-The commands and environment variables above are illustrative and may need adjustment to match the actual project files.
-
-🌏 Nationwide Implementation Strategy
+## 🌏 Nationwide Implementation Strategy
 Phase 1: Pilot Testing
 
 Deploy the platform in a selected district using authorized land records and evaluate its usability, security, and verification accuracy.
@@ -284,7 +216,7 @@ Phase 4: Continuous Improvement
 
 Maintain system security, improve reliability, conduct regular audits, and update the platform based on user feedback and regulatory requirements.
 
-🔮 Future Enhancements
+## 🔮 Future Enhancements
 
 Potential future improvements include:
 
@@ -301,7 +233,7 @@ Improved accessibility and support for low-bandwidth connections.
 
 These enhancements depend on implementation priorities, available resources, and relevant government approvals.
 
-👥 Team Members
+## 👥 Team Members
 
 Team Name: Consonants
 Team ID: LA-38
@@ -312,7 +244,7 @@ Khaled Aman	262-15-641	Computer Science and Engineering
 Mentors
 Faculty Mentor: Ms. Subarna Akter Liza — Lecturer, CSE
 Industry Mentor: MD Shoaib Khan — CSE-TECH
-⚖️ Disclaimer
+## ⚖️ Disclaimer
 
 VUMI is a digital document verification initiative intended to help identify potential document tampering and improve access to verification information.
 
@@ -320,7 +252,7 @@ The platform does not replace official land registration procedures, government 
 
 The reliability of verification results depends on the authenticity, accuracy, and authorization of the underlying records and cryptographic keys.
 
-📄 License
+## 📄 License
 
 A license has not yet been specified. Add an appropriate open-source or project-specific license before distributing the source code publicly.
 
