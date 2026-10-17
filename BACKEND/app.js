@@ -10,10 +10,11 @@ const app=express();
 
 app.use(cors({
     origin: [
+        "https://vumi-three.vercel.app",
         "http://192.168.0.105:5173",
         "http://localhost:5173",
         
-        "https://vumi-three.vercel.app",
+        
         
     ],
     credentials: true
