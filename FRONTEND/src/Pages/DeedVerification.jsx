@@ -25,7 +25,7 @@ const [resDetails,setResDetails]=useState([])
 
           if(res.status===200){
             const id=res?.data?.message
-navigate(`https://vumi-three.vercel.app/verification/${id}`)
+navigate(`/${id}`)
           } 
          if(res.status===201){
              setDeeds({deedId:"", ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })
