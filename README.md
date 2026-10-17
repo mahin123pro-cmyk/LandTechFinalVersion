@@ -22,7 +22,8 @@ Team Members
 Future Enhancements
 Disclaimer
 License
-##🌍 Overview
+
+## 🌍 Overview
 
 Land document forgery and ownership fraud are significant challenges in Bangladesh. Altered deeds, fragmented records, and complex verification procedures can lead to financial losses, property disputes, and delays in land transactions.
 
@@ -32,7 +33,7 @@ The platform uses cryptographic hashing to detect document modifications and dig
 
 VUMI is intended to complement existing government land digitization initiatives, providing a simple and accessible verification experience for citizens, property buyers, and authorized officials.
 
-##❗ Problem Statement
+## ❗ Problem Statement
 
 Traditional land document verification can be time-consuming and difficult, particularly when records are fragmented or reliable digital information is not readily accessible.
 
@@ -47,7 +48,7 @@ Financial losses and disputes arising from fraudulent documents.
 
 VUMI aims to address these challenges through a secure, technology-driven document verification process.
 
-##💡 Proposed Solution
+## 💡 Proposed Solution
 
 VUMI provides a centralized digital verification workflow for land documents.
 
@@ -59,7 +60,7 @@ When a user scans the QR code or enters the document ID, the platform retrieves 
 
 The result helps users understand whether the document matches the trusted digital record or requires further investigation.
 
-##✨ Key Features
+## ✨ Key Features
 1. QR-Based Document Verification
 
 Scan a QR code to access a document's verification page quickly and conveniently.
