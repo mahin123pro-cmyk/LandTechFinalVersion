@@ -189,8 +189,8 @@ setShow(!show)
 
       <div className='bg-blue-950 text-white p-5' id='security'>
         <div className='mt-10 md:m-20 scroll-mt-20'>
-          <h1 className='text-4xl md:font-semibold mb-3'>Built so records can't be quietly changed</h1>
-          <p className='text-xl text-gray-300 mb-6 '>Every verification is based on the registry's own data and protected from the moment you upload.</p>
+          <h1 className='text-4xl md:font-semibold mb-3'>এমনভাবে তৈরি, যাতে গোপনে রেকর্ড পরিবর্তন করা না যায়।</h1>
+          <p className='text-xl text-gray-300 mb-6 '>প্রতিটি যাচাই রেজিস্ট্রির নিজস্ব তথ্যের ভিত্তিতে করা হয় এবং আপলোড করার মুহূর্ত থেকেই সুরক্ষিত থাকে।</p>
         </div>
         <div className='flex w-full flex-col  md:flex-row gap-6 md:gap-10 flex-wrap justify-center '>
           {BuiltPartData.map((e) => {
