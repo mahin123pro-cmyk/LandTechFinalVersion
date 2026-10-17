@@ -1,29 +1,25 @@
 
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-const transport = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async ({ email, subject, html }) => {
-  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-    throw new Error("SMTP_USER or SMTP_PASS is missing");
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is missing");
   }
 
-  const info = await transport.sendMail({
-    from: process.env.SMTP_USER,
-    to: email,
+  const { data, error } = await resend.emails.send({
+    from: "LandTech <onboarding@resend.dev>",
+    to: [email],
     subject,
     html,
   });
 
-  console.log("Email sent successfully:", info.messageId);
+  if (error) {
+    console.error("RESEND ERROR:", error);
+    throw new Error(error.message || "Email sending failed");
+  }
 
-  return info;
+  console.log("Email sent:", data?.id);
+  return data;
 };
