@@ -118,6 +118,8 @@ const [loading, setLoading] = useState(true);
               <p className='text-3xl font-bold text-green-400'>{ownerDetails.currentOwner.name}</p>
               <p className='text-xl font-bold text-green-400'>Deed ID :<span>
                 {ownerDetails.deedId}</span></p>
+                <p className='text-xl font-bold text-green-400'> NID :<span>
+                {ownerDetails.currentOwner.nid}</span></p>
 
             </div>
             <div className='flex flex-col gap-5'>
