@@ -208,7 +208,7 @@ const [loading, setLoading] = useState(true);
                     return <div className='w-full bg-linear-to-bl/oklch from-blue-900 to-slate-900 p-5 ' key={index}>
                       <div className='flex  justify-between'>
                         <p className='text-2xl text-white font-medium'>{e.ownerName}</p>
-                        <p>{index === 0 ? <span className='px-2 py-1 rounded-2xl border-2 border-green-400 text-green-400'>Current Owner</span> : <span className='px-2 py-1 rounded-2xl border-2 border-red-400 text-red-400'>Previous Owner</span>}</p>
+                        <p>{index === 0 ? <span className='px-2 py-1 rounded-2xl border-2 border-green-400 text-green-400 text-nowrap'>Current Owner</span> : <span className='px-2 py-1 rounded-2xl border-2 border-red-400 text-red-400 text-nowrap'>Previous Owner</span>}</p>
                       </div>
                       <p>Nid:<span>{e.nid}</span></p>
                       <div>

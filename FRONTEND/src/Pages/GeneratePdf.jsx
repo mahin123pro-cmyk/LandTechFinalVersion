@@ -107,6 +107,12 @@ function GeneratePdf({ detailsForPdf,id }) {
       ["Upazila", detailsForPdf?.upazila],
       ["Mouza", detailsForPdf?.mouza],
       ["Khatian No", detailsForPdf?.khatianNo],
+       [
+    "Registration Date",
+    detailsForPdf?.registrationDate
+      ? new Date(detailsForPdf.registrationDate).toLocaleDateString("en-GB")
+      : "Not entered yet"
+  ],
       ["Document Hash", detailsForPdf?.hash],
     ];
 
@@ -133,7 +139,7 @@ function GeneratePdf({ detailsForPdf,id }) {
   };
 
   return (
-    <div className="p-4">
+    <div className="">
       <div className="flex gap-3">
         <button 
           onClick={downloadPdf}
