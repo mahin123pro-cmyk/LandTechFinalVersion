@@ -134,7 +134,7 @@ const handleHome=()=>{
           </div>   
           
           <h1 className='text-3xl mt-10 text-amber-700 mb-5 md:text-5xl font-semibold  md:font-bold mx-auto text-center'>
-            Deed Verification
+            Quick Verification
             
           </h1>
       
