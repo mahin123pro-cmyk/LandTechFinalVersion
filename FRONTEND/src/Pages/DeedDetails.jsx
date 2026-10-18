@@ -46,7 +46,7 @@ const [loading, setLoading] = useState(true);
   ]
 
   const details = [{ icon: <MapPinCheck />, title: "District",value:ownerDetails?.district },
-  { icon: <Navigation2 />, title: "Upazila",value:ownerDetails?.upazil },
+  { icon: <Navigation2 />, title: "Upazila",value:ownerDetails?.upazila },
   { icon: <Houses />, title: "Mouza",value:ownerDetails?.mouza },
   { icon: <MapPinSearch />, title: "Dag no.",value:ownerDetails?.dagNo },
   { icon: <FileText />, title: "Khatian no",value:ownerDetails?.khatianNo },
