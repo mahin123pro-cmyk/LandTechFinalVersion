@@ -24,7 +24,7 @@ const [loading, setLoading] = useState(true);
         upazila: res?.data?.message.upazila ?? "",
         mouza:res?.data?.message.mouza ?? "",
         khatianNo: res?.data?.message.khatianNo ?? "",
-        registrationDate:res?.deed?.registrationDate ?? "",
+      registrationDate: res?.data?.message?.registrationDate ?? "",
         hash: res?.data?.message.documentHash ?? ""
       });
       } catch (error) {
