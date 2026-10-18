@@ -199,7 +199,7 @@ Input validation: Validate uploaded files, document identifiers, and API request
 
 Important: A hash alone does not prove who issued a document. Digital signatures require a trusted key-management process, and the system must obtain its reference records from an authorized source.
 
-## PseudoUser Info
+## Pseudo User Info
 ```
 +------------------+--------------------------+----------+------------+------------+---------+---------+-------+------------+------------------+
 | Deed ID          | Current Owner            | NID      | Khatian No | District   | Upazila | Dag No  | Mouza | Land Area  | Registration Date|
