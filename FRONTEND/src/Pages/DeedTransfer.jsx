@@ -128,7 +128,7 @@ function DeedTransfer() {
 
 
 
-             <div className='flex flex-col'>
+             {/* <div className='flex flex-col'>
             <label>
               Land Area :
             </label>
@@ -146,7 +146,7 @@ function DeedTransfer() {
             </select></div>   
           
           </div>
-    
+     */}
           </div>
           <div className='flex flex-col'>
             <label>TransferDate</label>
