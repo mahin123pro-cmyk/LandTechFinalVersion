@@ -60,7 +60,7 @@ export const deedtransfer = async (req, res) => {
             mouza: deed.mouza,
             landArea: Number(deed.landArea),
             landUnit: deed.landUnit,
-            registrationDate: deed.registrationDate
+            registrationDate: transferData
         };
 
 
@@ -70,6 +70,7 @@ export const deedtransfer = async (req, res) => {
     name: newOwnerName,
     nid: newOwnerNid
     };
+    deed.registrationDate=transferData
 
     await deed.save();
 
