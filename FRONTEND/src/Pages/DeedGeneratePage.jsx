@@ -16,19 +16,48 @@ function DeedGeneratePage() {
     }
 
 
-    const submitData = async () => {
-        try {
+   const submitData = async () => {
+    const requiredFields = [
+        deeds.ownerName,
+        deeds.nid,
+        deeds.district,
+        deeds.upazila,
+        deeds.khatianNo,
+        deeds.dagNo,
+        deeds.mouza,
+        deeds.landArea,
+        deeds.landUnit,
+        deeds.registrationDate
+    ];
 
-            const res = await api.post("/api/deed/newdeedgenerate", deeds);
-
-            console.log(res)
-            setDeeds({ ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })
-          toast.success(res?.data?.message2)
-        }catch (error) {
-            console.log(error.message)
-            toast.error(error.response.data.message)
-        }
+    if (requiredFields.some((field) => !String(field).trim())) {
+        toast.error("All fields are required");
+        return;
     }
+
+    try {
+        const res = await api.post("/api/deed/newdeedgenerate", deeds);
+
+        console.log(res);
+        setDeeds({
+            ownerName: "",
+            nid: "",
+            district: "",
+            upazila: "",
+            khatianNo: "",
+            dagNo: "",
+            mouza: "",
+            landArea: "",
+            landUnit: "decimal",
+            registrationDate: ""
+        });
+
+        toast.success(res?.data?.message2);
+    } catch (error) {
+        console.log(error.message);
+        toast.error(error.response?.data?.message || "Something went wrong");
+    }
+};
 
 
     const clearData = () => {

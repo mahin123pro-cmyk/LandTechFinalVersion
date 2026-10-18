@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState,useRef } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { api } from '../utils/api';
   import { ToastContainer, toast } from 'react-toastify';
   import { Check, Cross, Shield, X } from 'lucide-react';
 
 function DeedVerification() {
-
+const compareRef = useRef(null);
     const navigate = useNavigate()
     const [sucess,setSuccess]=useState("")
     const[verifiedData,setVerifiedData]=useState({})
@@ -18,28 +18,65 @@ const [resDetails,setResDetails]=useState([])
     }
 
 
-    const submitData = async () => {
-        try {
+  const submitData = async () => {
+    const requiredFields = [
+        deeds.deedId,
+        deeds.ownerName,
+        deeds.nid,
+        deeds.district,
+        deeds.upazila,
+        deeds.khatianNo,
+        deeds.dagNo,
+        deeds.mouza,
+        deeds.landArea,
+        deeds.landUnit,
+        deeds.registrationDate
+    ];
 
-            const res = await api.post("/api/deed/verification", deeds);
-
-          if(res.status===200){
-            const id=res?.data?.message
-navigate(`/verification/${id}`)
-          } 
-         if(res.status===201){
-             setDeeds({deedId:"", ownerName: "", nid: "", district: "", upazila: "", khatianNo: "", dagNo: "", mouza: "", landArea: "", landUnit: "decimal", registrationDate: "" })
-           setResDetails(res?.data?.message)
-           setVerifiedData(res.data?.messageVerified)
-            toast.success(res?.data?.message)
-         }
-        }catch (error) {
-            console.log(error.message)
-          
-            console.log(resDetails)
-            toast.error(error.response.data.message)
-        }
+    if (requiredFields.some((field) => !String(field).trim())) {
+        toast.error("All fields are required");
+        return;
     }
+
+    try {
+        const res = await api.post("/api/deed/verification", deeds);
+
+        if (res.status === 200) {
+            const id = res?.data?.message;
+            navigate(`/verification/${id}`);
+        }
+
+        if (res.status === 201) {
+            setDeeds({
+                deedId: "",
+                ownerName: "",
+                nid: "",
+                district: "",
+                upazila: "",
+                khatianNo: "",
+                dagNo: "",
+                mouza: "",
+                landArea: "",
+                landUnit: "decimal",
+                registrationDate: ""
+            });
+
+            setResDetails(res?.data?.message);
+            setVerifiedData(res.data?.messageVerified);
+            
+            toast.success(res?.data?.message);
+            setTimeout(() => {
+    compareRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}, 100);
+        }
+    } catch (error) {
+        console.log(error.message);
+        toast.error(error.response?.data?.message || "Something went wrong");
+    }
+};
 
 
     const clearData = () => {
@@ -379,7 +416,7 @@ Registration Date :
 
 
   {
-    resDetails && resDetails.length>0 && <div className='bg-zinc-950  text-amber-50 w-full  px-4 md:px-20 py-8'>
+    resDetails && resDetails.length>0 && <div  ref={compareRef} className='bg-zinc-950  text-amber-50 w-full  px-4 md:px-20 py-8'>
 <div className='w-full'>
   
     <div>

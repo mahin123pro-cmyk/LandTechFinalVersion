@@ -22,19 +22,15 @@ useEffect(() => {
 
   if (!token) return;
 
-  axios
-    .get("http://localhost:5000/api/auth/profile", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .then(() => navigate("/admin/deedgenerate", { replace: true }))
-    .catch(() => {
-      localStorage.removeItem("token");
-    });
+  if (token) {
+    navigate("/admin", { replace: true });
+  }
 }, [navigate]);
   async function handleSubmit(e) {
+
     e.preventDefault();
+    setSubmitting(true);
+setError("");
 
 try {
     const res = await api.post("/api/auth/login", {
@@ -51,7 +47,9 @@ try {
   }catch (err) {
     setError(err.response?.data?.message ||"Login failed. Try again."
     );
-  } 
+  } finally {
+  setSubmitting(false);
+}
   }
 
   return (
@@ -90,15 +88,10 @@ try {
           disabled={submitting}
           className="w-full bg-blue-950 text-white rounded-lg p-3 disabled:opacity-50"
         >
-          {"Login"}
+        {submitting ? "Logging in..." : "Login"}
         </button>
 
-        <p className="text-center">
-          Don't have an account?{" "}
-          <Link className="text-blue-700 font-semibold" to="/register">
-            Register
-          </Link>
-        </p>
+       
 
         <Link className="block text-center text-gray-600" to="/">
           Back to Home

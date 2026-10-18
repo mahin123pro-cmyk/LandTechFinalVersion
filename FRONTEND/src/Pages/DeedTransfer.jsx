@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+
 import { api } from '../utils/api';
 
 function DeedTransfer() {
@@ -10,17 +12,44 @@ function DeedTransfer() {
     }
 
 
-    const submitData = async () => {
-        try {
+ const submitData = async () => {
+    const requiredFields = [
+        deeds.deedId,
+        deeds.previousOwnerNid,
+        deeds.newOwnerName,
+        deeds.newOwnerNid,
+        deeds.transferDocumentNo,
+        deeds.landArea,
+        deeds.landUnit,
+        deeds.transferDate
+    ];
 
-            const res = await api.post("/api/deed/transfer", deeds);
-            console.log(res)
-            setDeeds({ deedId: "", previousOwnerNid: "", newOwnerName: "", newOwnerNid: "", transferDocumentNo: "", landUnit: "decimal", transferDate: "" });
-        } catch (error) {
-            console.log(error.message)
-        }
+    if (requiredFields.some((field) => !String(field).trim())) {
+        toast.error("All fields are required");
+        return;
     }
 
+    try {
+        const res = await api.post("/api/deed/transfer", deeds);
+
+        console.log(res);
+        toast.success(res?.data?.message || "Land transferred successfully");
+
+        setDeeds({
+            deedId: "",
+            previousOwnerNid: "",
+            newOwnerName: "",
+            newOwnerNid: "",
+            transferDocumentNo: "",
+            landArea: "",
+            landUnit: "decimal",
+            transferDate: ""
+        });
+    } catch (error) {
+        console.log(error.message);
+        toast.error(error.response?.data?.message || "Something went wrong");
+    }
+};
 
     const clearData = () => {
 
