@@ -199,6 +199,19 @@ Input validation: Validate uploaded files, document identifiers, and API request
 
 Important: A hash alone does not prove who issued a document. Digital signatures require a trusted key-management process, and the system must obtain its reference records from an authorized source.
 
+## PseudoUser Info
+```
++------------------+--------------------------+----------+------------+------------+---------+---------+-------+------------+------------------+
+| Deed ID          | Current Owner            | NID      | Khatian No | District   | Upazila | Dag No  | Mouza | Land Area  | Registration Date|
++------------------+--------------------------+----------+------------+------------+---------+---------+-------+------------+------------------+
+| LV-D-9821DB2D4AF4AD91 | Rohim              | 2345678  | 1          | Dhaka      | Teknaf  | 12      | 12    | 10 Decimal | 19 May 1983      |
+| LV-D-BDB46076D601C203 | Kamal Rahman       | 12345    | 12         | Dhaka      | Mirpur  | 21      | 12    | 10 Decimal | 18 May 1991      |
++------------------+--------------------------+----------+------------+------------+---------+---------+-------+------------+------------------+
+
+```
+
+
+
 ## 🌏 Nationwide Implementation Strategy
 Phase 1: Pilot Testing
 
