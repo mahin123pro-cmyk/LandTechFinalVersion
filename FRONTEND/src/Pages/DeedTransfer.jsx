@@ -19,8 +19,8 @@ function DeedTransfer() {
         deeds.newOwnerName,
         deeds.newOwnerNid,
         deeds.transferDocumentNo,
-        deeds.landArea,
-        deeds.landUnit,
+        // deeds.landArea,
+        // deeds.landUnit,
         deeds.transferDate
     ];
 
