@@ -53,7 +53,14 @@ try {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center flex-col p-4">
+      <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md  mb-4">
+        <h1 className="text-center">Dummy Data</h1>
+        <div><p>email: admin@gmail.com</p>
+        <p>password:12345678</p>
+        </div>
+        
+      </div>
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md space-y-5"

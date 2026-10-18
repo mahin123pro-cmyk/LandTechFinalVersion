@@ -74,6 +74,7 @@ const handleLogOut=()=>{
         <Link to="/admin/allid" onClick={() => setShow(false)}>All Deed </Link>
         <button onClick={handleLogOut}>Logout</button>
       </div>
+      <div className="bg-blue-950"><h1 className="text-center text-2xl text-white font-bold">Admin</h1></div>
 <Outlet />;
 
 </div>
