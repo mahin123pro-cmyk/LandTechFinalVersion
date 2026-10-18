@@ -222,16 +222,24 @@ const [loading, setLoading] = useState(true);
 
 
                         })}</h1>
-                        <h1>To Date:{new Date(e.toDate).toLocaleString("en-GB", {
-
-
-                          timeZone: "Asia/Dhaka",
-                          day: "2-digit",
-                          month: "short",
-                          year: "numeric"
-
-
-                        })} </h1>
+                    <h1>
+  To Date:{" "}
+  {index === 0
+    ? new Date().toLocaleDateString("en-GB", {
+        timeZone: "Asia/Dhaka",
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      })
+    : e.toDate
+      ? new Date(e.toDate).toLocaleDateString("en-GB", {
+          timeZone: "Asia/Dhaka",
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        })
+      : "Present"}
+</h1>
                       </div>
                       <div className='w-full '>
                         <p>Transfer Hash:</p>
