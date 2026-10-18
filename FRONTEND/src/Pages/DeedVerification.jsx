@@ -106,7 +106,7 @@ const [resDetails,setResDetails]=useState([])
           <label className=''>
             Deed Id :
           </label>
-          <input style={{borderWidth:1}} className='  border-zinc-300 px-4 rounded-xl py-3' type='text' placeholder='e.g. D-2018-04512' name='deedId' value={deeds.deedId} onChange={handleChange} />
+          <input style={{borderWidth:1}} className='  border-zinc-300 px-4 rounded-xl py-3' type='text' placeholder='e.g. LV-D-0130207DFAFBDF3A' name='deedId' value={deeds.deedId} onChange={handleChange} />
         </div>
        
            <div  className='flex flex-col gap-y-2 mb-5'>
